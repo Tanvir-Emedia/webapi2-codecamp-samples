@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Web API Cors JS Client</title>
+</head>
+<body>
+    <div>
+        <input type="button" value="Try it" id="btnGetSessions" name="btnGetSessions" data-bind="click: loadSessions" />
+    </div>
+    <div>     
+        <ul data-bind="template: {name: 'session-item-template', foreach:sessions}"></ul>
+      
+    </div>
+    
+    <script type="text/html" id="session-item-template">
+        <li data-bind="text: Title"></li>
+    </script>
+    <script src="Scripts/knockout-3.0.0.js"></script>
+    <script src="Scripts/jquery-2.1.0.min.js"></script>
+    <script src="Scripts/app/app.dataservice.js"></script>
+    <script src="Scripts/app/app.vm.js"></script>
+    <script src="Scripts/app/app.js"></script>
+</body>
+</html>

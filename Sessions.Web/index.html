@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Camp Web API Sample</title>
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-fixed-top header">
+        <div class="col-md-12">
+            <div class="navbar-header">
+                <span class="navbar-brand">Code Camp Sessions</span>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse1">
+                <form class="navbar-form pull-left">
+                    <div class="input-group" style="max-width:470px;">
+                        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="btnToggle"><i class="glyphicon glyphicon-th-large"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-default" id="subnav">
+        <div class="col-md-12">
+            <div class="collapse navbar-collapse" id="navbar-collapse2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Posts</a></li>
+                    <!--<li><a href="#loginModal" role="button" data-toggle="modal">Login</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" id="main">
+        <div class="row" data-bind="template: {name: 'session-item-template', foreach:sessions}">
+
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h2 class="text-center"><br>Get Login Token</h2>
+                </div>
+                <div class="modal-body">
+                    <form class="form col-md-12 center-block">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control input-lg" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+                       </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-12">
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/html" id="session-item-template">
+        <div class="col-md-4 col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading"> <h4 data-bind="text: Presenter"></h4></div>
+                <div class="panel-body">
+                    <p> <span data-bind="text:Title"></span></p>
+                    <div class="clearfix"></div>
+                    <hr>
+                    <!--ko text: Description--><!--/ko-->
+                </div>
+            </div>
+        </div>
+    </script>
+    <script src="Scripts/jquery-2.1.0.min.js"></script>
+    <script src="Scripts/knockout-3.0.0.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/App/app.dataservice.js"></script>
+    <script src="Scripts/App/app.vm.js"></script>
+    <script src="Scripts/App/app.js"></script>
+</body>
+</html>
